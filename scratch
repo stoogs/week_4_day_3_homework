@@ -3,3 +3,22 @@
   <label for="id">ID:</label>
     <input id="id" value="<%= @student.id%>" type="integer" name="id" />
   </br>
+
+      <% for hoose in @house %>
+     <%= p hoose.name %>
+     <%= %>
+     <% end %>
+
+DROPDOWN MENU - EDIT
+     <div class="form-el">
+      <label for="house_select">Select House:</label> 
+      <select name="house_id" id="house_select" selected="<%= @student.house_id  %>">
+        <% @house.each do |house| %>
+          <% if house.id == @student.house_id %>
+            <option value=<%= house.id %> selected><%= house.name.capitalize %></option>
+          <% else %>
+            <option value=<%= house.id %>><%= house.name.capitalize %></option>
+          <% end %>
+        <% end %>
+      </select>
+    </div>

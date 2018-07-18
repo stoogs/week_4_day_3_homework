@@ -3,7 +3,10 @@ require('sinatra/contrib/all')
 require_relative('models/student')
 require_relative('models/house')
 also_reload('./models/*')
-
+#home
+get '/' do
+  erb( :welcome )
+end
 # index
   get '/student_list' do
     @students = Student.all()

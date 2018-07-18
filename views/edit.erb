@@ -12,14 +12,18 @@
     <input id="house_id" value="<%= @student.house_id %>" type="integer" name="house_id" />
   </br>
 
-    <label for="house-choice">Choose your house:</label>
-    <select id="house-choice" name="house_id">
-      <% p House.all%>
-       
-     
-    </select>
+      <div class="form-el">
+      <label for="house_select">Select House:</label> 
+      <select name="house_id" id="house_select">
+        <% @house.each do |house| %>
+          <%# Takes house id value on submit, but displays house name. %>
+            <option value=<%= house.id %> selected><%= house.name %></option>
+        <% end %>
+      </select>
+    </div>
   </br>
-
+    
+  </br>
   <label for="age">Age:</label>
     <input id="age" value="<%= @student.age%>" type="integer" name="age" />
   </br>
