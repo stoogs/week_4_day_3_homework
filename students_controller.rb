@@ -7,18 +7,17 @@ also_reload('./models/*')
 # index
   get '/student_list' do
     @students = Student.all()
-    # @house = House.all()
     erb( :index )
   end
 # show
   # get '/student'
 # new
-  get '/students/new' do
+  get '/student/new' do
     @house = House.all
-    erb(:new)
+    erb( :new )
   end
 # create
-  post '/students_list' do
+  post '/student_list' do
     @new_student = Student.new(params)
     @new_student.save()
     erb( :create )
