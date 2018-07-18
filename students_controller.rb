@@ -21,13 +21,22 @@ also_reload('./models/*')
   end
 # create
   post '/student_list' do
-    puts params
     @new_student = Student.new(params)
     @new_student.save()
     erb( :create )
   end
 # edit
+get '/student_list/:id/edit' do
+  @student = Student.find(params['id'])
+  @house = House.all
+  erb( :edit )
+end
 
 # update
+post '/student_list/:id' do
+  student = Student.new( params )
+  student.update
+  redirect to "student_list/" + params['id']
+end
 
 # destroy

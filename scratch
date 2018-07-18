@@ -1,0 +1,5 @@
+  edit id update - works , not needed
+
+  <label for="id">ID:</label>
+    <input id="id" value="<%= @student.id%>" type="integer" name="id" />
+  </br>
