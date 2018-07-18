@@ -1,7 +1,10 @@
-<h1>List of Students</h1>
+<h1>List of All Students</h1>
 
 <% for student in @students %>
 
-  <p> The student called <%= student.pretty_name %> of <%= student.house.name %> house</p>
+  <p> The student called <%= student.pretty_name %></p>
+  <p> <a href="student_list/<%= student.id%>">Show Details </a></p>
 
 <% end %>
+
+<a href="/student/new">Create New Student</a>

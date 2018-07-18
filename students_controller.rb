@@ -10,7 +10,10 @@ also_reload('./models/*')
     erb( :index )
   end
 # show
-  # get '/student'
+  get '/student_list/:id' do
+    @student = Student.find(params['id'])
+    erb ( :show )
+  end
 # new
   get '/student/new' do
     @house = House.all
@@ -18,6 +21,7 @@ also_reload('./models/*')
   end
 # create
   post '/student_list' do
+    puts params
     @new_student = Student.new(params)
     @new_student.save()
     erb( :create )
